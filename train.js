@@ -5,7 +5,7 @@ let data = fs
     .readFileSync(source, "utf-8")
     .trim()
     .toLowerCase()
-    .replace(/\.,/, "")
+    .replace(/\.,/g, "")
     .split("\n")
     .map(l => l.trim().split(" ").filter(Boolean));
 
@@ -47,5 +47,4 @@ for(let line of data) {
 }
 
 fs.writeFileSync(target, JSON.stringify(model, null, 4), "utf-8");
-
-console.log(`Model of ${source} written to ${target}!`)
+console.log(`Model of ${source} written to ${target} succesfully!`);
