@@ -8,11 +8,10 @@ function wRandom(arr) {
     return wArr[Math.floor(Math.random() * wArr.length)];
 }
 
+let starts = model.filter(n => n.starts);
 let sentences = [];
 
 for(let i = 0; i < (amount ?? 1); i++) {
-    let starts = model.filter(n => n.starts);
-
     let sentence = [];
 
     let next = wRandom(starts);
