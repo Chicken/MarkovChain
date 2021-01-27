@@ -1,4 +1,4 @@
-const [ source, amount ] = process.argv.slice(2);
+const [ source = "model.json", amount = 1 ] = process.argv.slice(2);
 
 const model = require(`./${source}`);
 
@@ -11,7 +11,7 @@ function wRandom(arr) {
 let starts = model.filter(n => n.starts);
 let sentences = [];
 
-for(let i = 0; i < (amount ?? 1); i++) {
+for(let i = 0; i < amount; i++) {
     let sentence = [];
 
     let next = wRandom(starts);
