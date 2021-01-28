@@ -47,5 +47,11 @@ for(let line of data) {
     }
 }
 
-fs.writeFileSync(target, JSON.stringify(model, null, 4), "utf-8");
+model.sort((a, b) => b.weight - a.weight);
+
+for(let node in model) {
+    model[node].next.sort((a, b) => b.weight - a.weight)
+}
+
+fs.writeFileSync(target, JSON.stringify(model, null, 2), "utf-8");
 console.log(`Model of ${source} written to ${target} succesfully! It took ${Date.now() - start}ms.`);
