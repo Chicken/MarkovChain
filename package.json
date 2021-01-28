@@ -1,10 +1,6 @@
 {
   "name": "markovchain",
   "version": "1.0.0",
-  "scripts": {
-    "train": "node train.js",
-    "generate": "node generate.js ./data/model.json 10"
-  },
   "author": "Antti <antti@antti.codes>",
   "license": "MIT"
 }
