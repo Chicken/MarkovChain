@@ -1,5 +1,5 @@
 const fs = require("fs");
-const [ source = "data.txt", target = "model.json" ] = process.argv.slice(2);
+const [ source = "./data/data.txt", target = "./data/model.json" ] = process.argv.slice(2);
 
 let data = fs
     .readFileSync(source, "utf-8")

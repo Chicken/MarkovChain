@@ -1,4 +1,4 @@
-const [ source = "model.json", amount = 1 ] = process.argv.slice(2);
+const [ source = "./data/model.json", amount = 1 ] = process.argv.slice(2);
 
 const model = require(`./${source}`);
 
