@@ -8,6 +8,8 @@ function wRandom(arr) {
     return wArr[Math.floor(Math.random() * wArr.length)];
 }
 
+let start = Date.now();
+
 let starts = model.filter(n => n.starts);
 let sentences = [];
 
@@ -23,4 +25,4 @@ for(let i = 0; i < amount; i++) {
     sentences.push(sentence.join(" "));
 }
 
-console.log(sentences.map((v,i) => `${i+1}. ${v}`).join("\n"));
+console.log(sentences.map((v,i) => `${i+1}. ${v}`).join("\n") + `\nGenerated in ${Date.now() - start}ms.`);
