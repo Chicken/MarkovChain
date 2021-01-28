@@ -1,6 +1,8 @@
 const fs = require("fs");
 const [ source = "./data/data.txt", target = "./data/model.json" ] = process.argv.slice(2);
 
+let start = Date.now();
+
 let data = fs
     .readFileSync(source, "utf-8")
     .trim()
@@ -46,4 +48,4 @@ for(let line of data) {
 }
 
 fs.writeFileSync(target, JSON.stringify(model, null, 4), "utf-8");
-console.log(`Model of ${source} written to ${target} succesfully!`);
+console.log(`Model of ${source} written to ${target} succesfully! It took ${Date.now() - start}ms.`);
