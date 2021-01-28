@@ -13,6 +13,11 @@ let start = Date.now();
 let first = comp.pop();
 let sentences = [];
 
+if(model.findIndex(n => n.value == first) == -1) {
+    console.log("Can't autocomplete. (Never seen this start)");
+    process.exit();
+}
+
 for(let i = 0; i < amount; i++) {
     let sentence = [];
 
@@ -23,7 +28,7 @@ for(let i = 0; i < amount; i++) {
     }
 
     let text = comp.concat(sentence).join(" ");
-    if(sentences.includes(text)) {
+    if(sentences.includes(text) || text == first) {
         amount++;
     } else {
         sentences.push(text);
