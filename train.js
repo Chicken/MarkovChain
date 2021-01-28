@@ -5,7 +5,6 @@ let data = fs
     .readFileSync(source, "utf-8")
     .trim()
     .toLowerCase()
-    .replace(/[.,!?]/g, "")
     .split("\n")
     .map(l => l.trim().split(" ").filter(Boolean));
 
