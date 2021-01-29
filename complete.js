@@ -10,6 +10,7 @@ function wRandom(arr) {
 
 let start = Date.now();
 
+let original = comp.join(" ");
 let first = comp.pop();
 let sentences = [];
 
@@ -28,7 +29,7 @@ for(let i = 0; i < amount; i++) {
     }
 
     let text = comp.concat(sentence).join(" ");
-    if(sentences.includes(text) || text == first) {
+    if(sentences.includes(text) || text == original) {
         amount++;
     } else {
         sentences.push(text);

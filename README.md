@@ -13,3 +13,6 @@ where each line should be a "message" or a sentence <br>
 
 Run `node generate.js <modelFile> <amount>` to generate random "messages" <br>
 or sentences from the modelfile.
+
+Run `node complete.js <modelFile> <amount> <...start>` to generate random "messages" <br>
+or sentences from the modelfile that start with the specified sentence or word.
